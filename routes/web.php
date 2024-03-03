@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+        'page_title' => 'Utama'
+    ];
+
+    return view('home', $data);
+});
+
+Route::get('/about', function () {
+    $data = [
+        'page_title' => 'Tentang Kami'
+    ];
+
+    return view('about', $data);
+});
+
+Route::get('/posts', function () {
+    $data = [
+        'page_title' => 'Unggahan'
+    ];
+
+    return view('posts', $data);
 });
