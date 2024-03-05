@@ -13,7 +13,7 @@
 
 ### Panduan Pengembangan
 
--   Standar penulisan endpoint adalah `(nama controller)/(nama method [khusus untuk aksi create, update, dan delete])/(id objek [jika diperlukan])`. Nama controller ditulis dalam `kebab-case` dengan format `object(s)`. Nama method ditulis dalam `kebab-case` dengan format `action-object(s)`
+-   Standar penulisan endpoint adalah `/(nama controller)/(nama method [khusus untuk aksi create, update, dan delete])/(id objek [jika diperlukan])`. Nama controller ditulis dalam `kebab-case` dengan format `object(s)`. Nama method ditulis dalam `kebab-case` dengan format `action-object(s)`
 -   Tentukan route di folder `routes/web.php`
 -   Buat controller sesuai referensi [ini](https://laravel.com/docs/10.x/controllers#basic-controllers) atau dengan ekstensi Laravel Artisan (tekan `ctrl + shift + p` untuk mengaktifkannya), controller akan disimpan di folder `app/Http/Controllers`
 -   Buat view di folder `resources/views`. Catatan:
@@ -40,14 +40,14 @@
     -   Prettier - Code formatter (untuk formatting file-file lainnya, nyalakan opsi Format on Save di settings VS Code untuk mempermudah)
 -   Standar penulisan
     -   Kode ditulis dalam _bahasa Inggris_ untuk mengurangi ambiguitas
+    -   Ukuran tab adalah _4 spasi_
     -   Nama kelas ditulis dalam `PascalCase`
     -   Nama variabel, fungsi, id tag HTML, dll. ditulis dalam `camelCase`
     -   Penamaan fungsi mengikuti format `actionObject(s)(ByKeyName)`
     -   Standar penamaan action
-        -   Create => create (di controller) atau add (di model)
+        -   Create => create (di controller dan url) atau add (di model)
         -   Read => view (di controller) atau get (di model)
         -   Update => edit
         -   Delete => remove
     -   Penamaan kelas dan file controller mengikuti format `ObjectsController`
-    -   Penamaan kelas dan file controller mengikuti format `ObjectsModel`
-    -   Ukuran tab adalah _4 spasi_
+    -   Penamaan kelas dan file model mengikuti format `ObjectsModel`
