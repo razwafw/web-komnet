@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,72 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data = [
-        'page_title' => 'Utama'
-    ];
+Route::get('/home', [HomeController::class, 'index']);
 
-    return view('home', $data);
-});
+Route::redirect('/', '/home');
 
-Route::get('/about', function () {
-    $data = [
-        'page_title' => 'Tentang Kami'
-    ];
+Route::get('/about', [AboutController::class, 'index']);
 
-    return view('about', $data);
-});
+Route::get('/posts', [PostsController::class, 'index']);
 
-Route::get('/posts', function () {
-    $mockPosts = [
-        [
-            'post_title' => 'Post #1',
-            'post_date' => 'Jan 1st, 1970',
-            'post_description' => 'Description for Post #1',
-            'post_id' => 'post-1'
-        ],
-        [
-            'post_title' => 'Post #2',
-            'post_date' => 'Jan 2nd, 1970',
-            'post_description' => 'Description for Post #2',
-            'post_id' => 'post-2'
-        ]
-    ];
-
-    $data = [
-        'page_title' => 'Unggahan',
-        'posts' => $mockPosts
-    ];
-
-    return view('posts', $data);
-});
-
-Route::get('/posts/{post_id}', function ($post_id) {
-    $mockPosts = [
-        [
-            'post_title' => 'Post #1',
-            'post_date' => 'Jan 1st, 1970',
-            'post_description' => 'Description for Post #1',
-            'post_id' => 'post-1'
-        ],
-        [
-            'post_title' => 'Post #2',
-            'post_date' => 'Jan 2nd, 1970',
-            'post_description' => 'Description for Post #2',
-            'post_id' => 'post-2'
-        ]
-    ];
-
-    foreach ($mockPosts as $post) {
-        if ($post['post_id'] === $post_id) {
-            $mockPost = $post;
-        }
-    }
-
-    $data = [
-        'page_title' => 'Detail Unggahan',
-        'post' => $mockPost
-    ];
-
-    return view('post', $data);
-});
+Route::get('/posts/{postId}', [PostsController::class, 'viewPostByPostId']);

@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('main-content')
-    <p>Anda berada di Halaman {{ $page_title }}.</p>
+@section('mainContent')
+    <p>Anda berada di Halaman {{ $pageTitle }}.</p>
     <hr>
 
-    <h3>{{ $post['post_title'] }}</h3>
-    <small>Created at {{ $post['post_date'] }}</small>
-    <p>{{ $post['post_description'] }}</p>
+    <h3>{{ $post['postTitle'] }}</h3>
+    <small>Created at {{ $post['postDate'] }}</small>
+    <p>{{ $post['postDescription'] }}</p>
 
     <a href="/posts">Back</a>
 @endsection

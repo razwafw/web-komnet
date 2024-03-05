@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
-@section('main-content')
-    <p>Anda berada di Halaman {{ $page_title }}.</p>
+@section('mainContent')
+    <p>Anda berada di Halaman {{ $pageTitle }}.</p>
 @endsection
