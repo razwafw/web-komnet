@@ -20,7 +20,7 @@
     -   Untuk template susunan halaman, tambahkan di folder `./layouts`
     -   Untuk komponen halaman yang reusable, tambahkan di folder `./partials`
 -   Buat model sesuai referensi [ini](https://laravel.com/docs/10.x/eloquent#generating-model-classes) atau dengan menggunakan ekstensi Laravel Artisan, model akan disimpan di folder `app/Models`
--   Tambahkan file CSS, JS, gambar, dll. di folder `public/`
+-   Tambahkan file CSS, JS, gambar, dll. di folder `public/`. Akses endpoint `/assets/` dari file HTML dengan fungsi [ini](https://laravel.com/docs/10.x/helpers#method-asset)
 
 ### Tambahan
 
