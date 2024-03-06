@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +22,6 @@ Route::redirect('/', '/home');
 
 Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/posts', [PostsController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index']);
 
-Route::get('/posts/{postId}', [PostsController::class, 'viewPostByPostId']);
+Route::get('/posts/{postId}', [PostController::class, 'viewPostByPostId']);

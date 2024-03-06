@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PostsModel;
+use App\Models\Post;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
     public function index()
     {
         $data = [
             'pageTitle' => 'Unggahan',
-            'posts' => PostsModel::getPosts(),
+            'posts' => Post::all(),
         ];
 
         return view('posts', $data);
@@ -20,9 +20,9 @@ class PostsController extends Controller
     {
         $data = [
             'pageTitle' => 'Detail Unggahan',
-            'post' => PostsModel::getPostByPostId($postId)
+            'post' => Post::find($postId)
         ];
 
-        return view('post', $data);
+        return view('post-detail', $data);
     }
 }
