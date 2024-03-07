@@ -3,6 +3,7 @@
 ### Prasyarat
 
 -   XAMPP dengan PHP versi 8.1.x atau lebih tinggi
+-   Composer (PHP package manager)
 -   VS Code (supaya mudah menyamakan ekstensi dan konfigurasi)
 
 ### Panduan Pemasangan & Penggunaan
