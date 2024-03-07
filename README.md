@@ -7,12 +7,13 @@
 
 ### Panduan Pemasangan & Penggunaan
 
-1. Clone GitHub repository ini dan simpan di lokasi manapun
+1. Clone GitHub repository ini dengan menjakan perintah `git clone https://github.com/razwafw/web-komnet.git` dari lokasi manapun
 2. Install dependency PHP Laravel dengan menjalan perintah `composer install` pada terminal dari direktori root proyek
-3. Copy file `.env.example`, rename hasil copy menjadi `.env`. Sesuaikan nilai untuk `DB_*` dengan kredensial ke database yang sesuai (yang sudah diinstal melalui XAMPP)
-4. Generate app key baru dengan menjalankan perintah `php artisan key:generate` pada terminal dari direktori root proyek
-5. Migrate schema database dengan menjalankan perintah `php artisan migrate` pada terminal dari direktori root proyek. _Catatan: Batalkan migration dengan perintah `php artisan migrate:rollback` atau gunakan `php artisan migrate:fresh` untuk memperbarui skema database_
-6. Jalankan web server dengan menjalankan perintah `php artisan serve` pada terminal dari direktori root proyek
+3. Buat database baru pada server SQL yang terpasang. _Catatan: nama dari database tersebut akan menjadi nilai dari key `DB_DATABASE` pada file `.env` yang akan dibuat nantinya_
+4. Copy file `.env.example`, rename hasil copy menjadi `.env`. Sesuaikan nilai untuk `DB_*` dengan kredensial ke database yang sesuai (yang sudah diinstal melalui XAMPP)
+5. Generate app key baru dengan menjalankan perintah `php artisan key:generate` pada terminal dari direktori root proyek
+6. Migrate schema database dengan menjalankan perintah `php artisan migrate` pada terminal dari direktori root proyek. _Catatan: Batalkan migration dengan perintah `php artisan migrate:rollback` atau gunakan `php artisan migrate:fresh` untuk memperbarui skema database_
+7. Jalankan web server dengan menjalankan perintah `php artisan serve` pada terminal dari direktori root proyek
 
 ### Panduan Pengembangan
 
@@ -39,6 +40,7 @@
     -   Untuk komponen halaman yang reusable, tambahkan di folder `./partials`
 -   Buat migration database (usahakan pembuatan schema database melalui migration, bukan secara manual, agar perubahan development lebih mudah disatukan) sesuai dengan referensi [ini](https://laravel.com/docs/10.x/migrations#generating-migrations) atau dengan ekstensi Laravel Artisan, migration akan disimpan di folder `database/migrations`
 -   Buat model sesuai referensi [ini](https://laravel.com/docs/10.x/eloquent#generating-model-classes) atau dengan menggunakan ekstensi Laravel Artisan (dibuat bersamaan dengan pembuatan migration lebih baik, untuk mempermudah penggunaan Eloquent ORM), model akan disimpan di folder `app/Models`
+-   Lakukan manipulasi secara manual terhadap data di database dengan sistem Eloquent ORM sesuai referensi [ini](https://laravel.com/docs/10.x/eloquent). Manipulasi ini dapat dilakukan melalui Artisan Tinker dengan menjalankan perintah `php artisan tinker` di terminal
 -   Tambahkan file CSS, JS, gambar, dll. di folder `public/`. Akses endpoint `/assets/` dari file HTML dengan fungsi `assets()` sesuai referensi [ini](https://laravel.com/docs/10.x/helpers#method-asset)
 
 ### Tambahan
