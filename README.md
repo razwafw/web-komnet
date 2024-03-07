@@ -2,13 +2,13 @@
 
 ### Prasyarat
 
--   XAMPP dengan PHP versi 8.1.x atau lebih tinggi
--   Composer (PHP package manager)
--   VS Code (supaya mudah menyamakan ekstensi dan konfigurasi)
+-   [XAMPP](https://www.apachefriends.org/download.html) dengan PHP versi 8.1.x atau lebih tinggi
+-   [Composer](https://getcomposer.org/download/) (PHP package manager)
+-   [VS Code](https://code.visualstudio.com/download) (supaya mudah menyamakan ekstensi dan konfigurasi)
 
 ### Panduan Pemasangan & Penggunaan
 
-1. Clone GitHub repository ini dengan menjakan perintah `git clone https://github.com/razwafw/web-komnet.git` dari lokasi manapun
+1. Clone GitHub repository ini dengan menjakan perintah `git clone https://github.com/razwafw/web-komnet.git` pada terminal dari lokasi manapun
 2. Install dependency PHP Laravel dengan menjalan perintah `composer install` pada terminal dari direktori root proyek
 3. Buat database baru pada server SQL yang terpasang. _Catatan: nama dari database tersebut akan menjadi nilai dari key `DB_DATABASE` pada file `.env` yang akan dibuat nantinya_
 4. Copy file `.env.example`, rename hasil copy menjadi `.env`. Sesuaikan nilai untuk `DB_*` dengan kredensial ke database yang sesuai (yang sudah diinstal melalui XAMPP)
