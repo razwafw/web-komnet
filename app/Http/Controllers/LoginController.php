@@ -15,8 +15,13 @@ class LoginController extends Controller
         return view('login', $data);
     }
 
-    public function authenticateUser()
+    public function authenticateUser(Request $request)
     {
-        return request()->all();
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        dd('login successful');
     }
 }
