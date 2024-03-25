@@ -44,6 +44,14 @@
 -   Lakukan manipulasi secara manual terhadap data di database dengan sistem Eloquent ORM sesuai referensi [ini](https://laravel.com/docs/10.x/eloquent). Manipulasi ini dapat dilakukan melalui Artisan Tinker dengan menjalankan perintah `php artisan tinker` di terminal
 -   Tambahkan file CSS, JS, gambar, dll. di folder `public/`. Akses endpoint `/assets/` dari file HTML dengan fungsi `assets()` sesuai referensi [ini](https://laravel.com/docs/10.x/helpers#method-asset)
 
+### Penambahan Pengguna
+1. Masuk ke Artisan Tinker dengan perintah `php artisan tinker`
+2. Masukkan namespace kelas yang akan digunakan dengan menjalankan perintah `use App\Models\User` dan `use Illuminate\Support\Facades\Hash`
+3. Buat instance User baru dengan menjalankan perintah `$user = new User`
+4. Entri username pengguna dengan menjalakan perintah `$user->username = '<username>'`
+5. Entri password pengguna dengan menjalakan perintah `$user->password = Hash::make('<password>')`
+6. Simpan instance User baru dengan menjalankan perintah `$user->save()`
+
 ### Tambahan
 
 -   Ekstensi pendukung untuk VS Code
