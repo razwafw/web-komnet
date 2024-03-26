@@ -3,6 +3,13 @@
 @section('mainContent')
     <p>Anda berada di Halaman {{ $pageTitle }}.</p>
 
+    @if (session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <form action="/login/authenticate-user" method="post">
         @csrf
         <div class="mb-3">
