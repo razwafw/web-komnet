@@ -13,7 +13,7 @@
 3. Buat database baru pada server SQL yang terpasang. _Catatan: nama dari database tersebut akan menjadi nilai dari key `DB_DATABASE` pada file `.env` yang akan dibuat nantinya_
 4. Copy file `.env.example`, rename hasil copy menjadi `.env`. Sesuaikan nilai untuk `DB_*` dengan kredensial ke database yang sesuai (yang sudah diinstal melalui XAMPP)
 5. Generate app key baru dengan menjalankan perintah `php artisan key:generate` pada terminal dari direktori root proyek
-6. Migrate schema database dengan menjalankan perintah `php artisan migrate` pada terminal dari direktori root proyek. _Catatan: Batalkan migration dengan perintah `php artisan migrate:rollback` atau gunakan `php artisan migrate:fresh` untuk memperbarui skema database_
+6. Migrate schema database dengan menjalankan perintah `php artisan migrate --seed` pada terminal dari direktori root proyek (flag seed digunakan untuk mengaktifkan seeder yang dibuat). _Catatan: Batalkan migration dengan perintah `php artisan migrate:rollback` atau gunakan `php artisan migrate:fresh` untuk memperbarui skema database_
 7. Jalankan web server dengan menjalankan perintah `php artisan serve` pada terminal dari direktori root proyek
 
 ### Panduan Pengembangan
@@ -32,6 +32,7 @@
         -   Delete => remove
     -   Penamaan kelas dan file controller mengikuti format `ObjectController`
     -   Penamaan kelas dan file model mengikuti format `Object`
+    -   Penamaan kelas dan file seeder mengikuti format `ObjectSeeder`
     -   Penamaan tabel hasil migration mengikuti format `objects`
     -   Penamaan file view mengikuti format `object(s)(-keterangan)`
 -   Tentukan route di folder `routes/web.php`
