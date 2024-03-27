@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use HasFactory, HasUlids;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'username',
         'password'
